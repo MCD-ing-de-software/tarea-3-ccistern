@@ -154,7 +154,7 @@ class TestDataCleaner(unittest.TestCase):
         """
         df = make_sample_df()
         cleaner = DataCleaner()
-        result = cleaner.remove_outliers_iqr(df, "age", factor=0.5)
+        result = cleaner.remove_outliers_iqr(df, "age", factor=1.5)
 
         self.assertNotIn(120, result["age"].values)
         self.assertTrue(25 in result["age"].values or 35 in result["age"].values)
